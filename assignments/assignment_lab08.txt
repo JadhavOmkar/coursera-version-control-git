@@ -1,0 +1,216 @@
+Last login: Mon Jun 17 16:23:51 on ttys005
+laeguanga (master) Coursera_VersionControlGit $ ls
+00_DevOpsGitNutshell.ipynb	01_OurFirstRepository.ipynb	02_BranchesAndMergining.ipynb	03_BranchesAndMerginingII.ipynb	README.md			images				labs
+aeguanga (master) Coursera_VersionControlGit $ cd labs
+aeguanga (master) labs $ ls
+00_lab.pdf	01_lab.pdf	02_lab.pdf	03_lab.pdf	04_lab.pdf	05_lab.pdf	06_lab.pdf	07_lab.pdf	08_lab.pdf
+aeguanga (master) labs $ open 06_lab.pdf 
+aeguanga (master) labs $ lw
+-bash: lw: command not found
+aeguanga (master) labs $ open 08_lab.pdf 
+aeguanga (master) labs $ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeguanga (master) labs $ cd ..
+aeguanga (master) Coursera_VersionControlGit $ git branch --all
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+aeguanga (master) Coursera_VersionControlGit $ git log --all --online -graph
+fatal: unrecognized argument: --online
+aeguanga (master) Coursera_VersionControlGit $ git log --all --oneline --graph
+* 061fb10 (HEAD -> master, origin/master, origin/HEAD) Pushing the Version Control with Git Course in Coursera to GitHub
+aeguanga (master) Coursera_VersionControlGit $ touch temp_file.txt
+aeguanga (master) Coursera_VersionControlGit $ cat "NEW FILE Included" >> temp_file.txt 
+cat: NEW FILE Included: No such file or directory
+aeguanga (master) Coursera_VersionControlGit $ echo "NEW FILE Included" >> temp_file.txt
+aeguanga (master) Coursera_VersionControlGit $ cat temp_file.txt 
+NEW FILE Included
+aeguanga (master) Coursera_VersionControlGit $ git add ./temp_file.txt
+aeguanga (master +) Coursera_VersionControlGit $ git commit -m "Including a new file (will be deleted). For Coursera purposes only"
+[master 78e86d8] Including a new file (will be deleted). For Coursera purposes only
+ 1 file changed, 1 insertion(+)
+ create mode 100644 temp_file.txt
+aeguanga (master) Coursera_VersionControlGit $ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:alexguanga/coursera-version-control-git.git
+   061fb10..78e86d8  master -> master
+aeguanga (master) Coursera_VersionControlGit $ git log --all --oneline --graph
+* 78e86d8 (HEAD -> master, origin/master, origin/HEAD) Including a new file (will be deleted). For Coursera purposes only
+* 061fb10 Pushing the Version Control with Git Course in Coursera to GitHub
+aeguanga (master) Coursera_VersionControlGit $ git branch --all
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+aeguanga (master) Coursera_VersionControlGit $ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+aeguanga (master) Coursera_VersionControlGit $ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeguanga (master) Coursera_VersionControlGit $ git branch --all
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+aeguanga (master) Coursera_VersionControlGit $ echo "MORE INFO" >> temp_file.txt 
+aeguanga (master *) Coursera_VersionControlGit $ git add ./
+aeguanga (master +) Coursera_VersionControlGit $ git commit -m "modification on the temp_file was made (will be deleted)"
+[master 160257f] modification on the temp_file was made (will be deleted)
+ 1 file changed, 1 insertion(+)
+aeguanga (master) Coursera_VersionControlGit $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+aeguanga (master) Coursera_VersionControlGit $ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:alexguanga/coursera-version-control-git.git
+   78e86d8..160257f  master -> master
+aeguanga (master) Coursera_VersionControlGit $ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+aeguanga (master) Coursera_VersionControlGit $ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
