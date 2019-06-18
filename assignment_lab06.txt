@@ -1,0 +1,120 @@
+Last login: Tue Jun 18 08:16:21 on ttys000
+aeguanga (master) Coursera_VersionControlGit $ nano fileA.txt
+aeguanga (master) Coursera_VersionControlGit $ git add ./
+aeguanga (master +) Coursera_VersionControlGit $ git commit -m "Adding fileA.txt"
+[master 83a4cd3] Adding fileA.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fileA.txt
+aeguanga (master) Coursera_VersionControlGit $ git checkout -b feature2
+Switched to a new branch 'feature2'
+aeguanga (feature2) Coursera_VersionControlGit $ nano fileA.txt 
+aeguanga (feature2 *) Coursera_VersionControlGit $ nano fileA.txt 
+aeguanga (feature2 *) Coursera_VersionControlGit $ git add ./
+aeguanga (feature2 +) Coursera_VersionControlGit $ git commit -m "Changes on fileA.txt were made"
+[feature2 45cc64c] Changes on fileA.txt were made
+ 1 file changed, 2 insertions(+)
+aeguanga (feature2) Coursera_VersionControlGit $ git log --oneline --graph --all
+* 45cc64c (HEAD -> feature2) Changes on fileA.txt were made
+* 83a4cd3 (master) Adding fileA.txt
+* 7560edf (origin/master, origin/HEAD) assignment07 was uploaded but assignment08 was deleted by mistake
+* c549785 Assignment 08 was created and removing the temp file
+* 160257f modification on the temp_file was made (will be deleted)
+* 78e86d8 Including a new file (will be deleted). For Coursera purposes only
+* 061fb10 Pushing the Version Control with Git Course in Coursera to GitHub
+aeguanga (feature2) Coursera_VersionControlGit $ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+aeguanga (master) Coursera_VersionControlGit $ git merge feature2 
+Updating 83a4cd3..45cc64c
+Fast-forward
+ fileA.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+aeguanga (master) Coursera_VersionControlGit $ git branch -d feature2 
+Deleted branch feature2 (was 45cc64c).
+aeguanga (master) Coursera_VersionControlGit $ ;ls
+-bash: syntax error near unexpected token `;'
+aeguanga (master) Coursera_VersionControlGit $ ls
+00_DevOpsGitNutshell.ipynb	02_BranchesAndMergining.ipynb	README.md			fileA.txt			labs
+01_OurFirstRepository.ipynb	03_BranchesAndMerginingII.ipynb	assignments			images
+aeguanga (master) Coursera_VersionControlGit $ git checkout -b feature3
+Switched to a new branch 'feature3'
+aeguanga (feature3) Coursera_VersionControlGit $ nano fileA.txt 
+aeguanga (feature3 *) Coursera_VersionControlGit $ git add ./fileA.txt
+aeguanga (feature3 +) Coursera_VersionControlGit $ git commit -m "Changes to feature3 were being made (for the course)"
+[feature3 552a1b5] Changes to feature3 were being made (for the course)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+aeguanga (feature3) Coursera_VersionControlGit $ git merge --no-ff feature3
+Already up to date.
+aeguanga (feature3) Coursera_VersionControlGit $ git checkout master 
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+aeguanga (master) Coursera_VersionControlGit $ git merge --no-ff feature3
+hint: Waiting for your editor to close the file... 
+[1]+  Stopped                 git merge --no-ff feature3
+aeguanga (master +|MERGING) Coursera_VersionControlGit $ git merge --no-ff feature3
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+aeguanga (master +|MERGING) Coursera_VersionControlGit $ git merge --no-ff feature3 -m "Merge Commit"
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+aeguanga (master +|MERGING) Coursera_VersionControlGit $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   fileA.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.ipynb_checkpoints/
+
+aeguanga (master +|MERGING) Coursera_VersionControlGit $ git commit -m "changes for a merge commit"
+[master 2695b46] changes for a merge commit
+aeguanga (master) Coursera_VersionControlGit $ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 908 bytes | 908.00 KiB/s, done.
+Total 10 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To github.com:alexguanga/coursera-version-control-git.git
+   7560edf..2695b46  master -> master
+aeguanga (master) Coursera_VersionControlGit $ git branch -d feature3
+Deleted branch feature3 (was 552a1b5).
+aeguanga (master) Coursera_VersionControlGit $ l;s
+-bash: l: command not found
+-bash: s: command not found
+aeguanga (master) Coursera_VersionControlGit $ ;s
+-bash: syntax error near unexpected token `;'
+aeguanga (master) Coursera_VersionControlGit $ ls
+00_DevOpsGitNutshell.ipynb	02_BranchesAndMergining.ipynb	README.md			fileA.txt			labs
+01_OurFirstRepository.ipynb	03_BranchesAndMerginingII.ipynb	assignments			images
+aeguanga (master) Coursera_VersionControlGit $ rm fileA.txt 
+aeguanga (master *) Coursera_VersionControlGit $ git add ./
+aeguanga (master +) Coursera_VersionControlGit $ git commit -m "fileA.txt was deleted"
+[master 347ea9e] fileA.txt was deleted
+ 2 files changed, 371 insertions(+), 3 deletions(-)
+ create mode 100644 .ipynb_checkpoints/02_BranchesAndMergining-checkpoint.ipynb
+ delete mode 100644 fileA.txt
+aeguanga (master) Coursera_VersionControlGit $ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 358 bytes | 358.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:alexguanga/coursera-version-control-git.git
+   2695b46..347ea9e  master -> master
+aeguanga (master) Coursera_VersionControlGit $ ls assignments/
+assignment_lab07.txt	assignment_lab08.txt
+aeguanga (master) Coursera_VersionControlGit $ 
